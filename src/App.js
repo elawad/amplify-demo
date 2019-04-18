@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import AuthButton from './AuthButton';
 
 class App extends Component {
   render() {
+    if (this.props.authState !== 'signedIn') return null;
+
     return (
       <div className="App">
         <header className="App-header">
+          <AuthButton />
+
           <img src={logo} className="App-logo" alt="logo" />
           <p>
             Edit <code>src/App.js</code> and save to reload.
